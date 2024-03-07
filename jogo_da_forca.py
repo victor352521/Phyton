@@ -1,3 +1,4 @@
+import jogos
 def jogar():
 
     palavra_secreta = "malakoi"
@@ -19,9 +20,9 @@ def jogar():
         print(" ".join(letras_acertadas))
             
     if "_" not in letras_acertadas:
-    print (f"Parabéns! Você acertou.")
+        print (f"Parabéns! Você acertou.")
     else:
         print (f"Poxa, não foi dessa vez :(")
-
-if(__name__=="__main__")
+    jogos.escolha_jogo()
+if(__name__=="__main__"):
     jogar()

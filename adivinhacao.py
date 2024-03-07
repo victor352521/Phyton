@@ -1,4 +1,5 @@
 import random
+import jogos
 
 def jogar_advinhacao():
     nivel = int(input("Escolha o nível de dificuldade (1- fácil, 2- médio, 3- difícil):"))
@@ -37,5 +38,8 @@ def jogar_advinhacao():
     if not acertou: 
         print(f"Suas tentativas acabaram. O número secreto era {numero_secreto}.")
     print("Fim do jogo! HAHAHAHAHHAHAHHAAH!!!")
+
+    jogos.escolha_jogo()
+    
 jogar_advinhacao()
             
