@@ -1,0 +1,7 @@
+try:
+    n1 = float(input("Escreva um número inteiro"))
+    n2 = float(input("Escreva mais um número inteiro"))
+    soma = n1 + n2
+    print (f"{soma}")
+except ValueError:
+    print("Tente novamente")
