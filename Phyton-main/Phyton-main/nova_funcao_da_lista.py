@@ -1,3 +1,5 @@
+import os 
+
 def mostrar_lista(lista):
     print("Lista:")
     for item in lista:
@@ -21,6 +23,7 @@ def excluir_item(lista):
 
 def gravar_lista(lista):
     nome_arq = input("Digite o nome do arquivo")
+    nome_arq += ".txt" 
     with open(nome_arq, "w") as arquivo:
         for item in lista:
             arquivo.write(item + "\n")
@@ -32,6 +35,7 @@ def ordenar_lista(lista):
 
 def carregar_lista(lista):
     nome_arq = input("Digite o nome do arquivo que deseja carregar")
+    nome_arq += ".txt" 
     try:
         with open(nome_arq, "r") as arquivo:
             lista.clear()
@@ -45,6 +49,13 @@ def carregar_lista(lista):
     except Exception as e:
         print("Ocorreu um erro", e)
 
+def listar_arquivo(extensao = ".txt"):
+    diretorios = os.getcwd()
+    arquivos = os.listdir(diretorios)
+    print(f"Arquivos. {extensao} no diretório atual:")
+    for lista_arquivo in arquivos:
+        if lista_arquivo.endswith(extensao):
+            print (lista_arquivo)
 
 def main():
     lista = []
@@ -57,8 +68,9 @@ def main():
         print("3. Mostrar lista atual")
         print("4. Gravar lista")
         print("5. Carregar lista")
-        print("6. ordenar lista")
-        print("7. Sair do programa")
+        print("6. Ordenar lista")
+        print("7. Listar arquivo")
+        print("8. Sair do programa")
 
         opcao = input("Opção: ")
 
@@ -75,6 +87,8 @@ def main():
         elif opcao == '6':
             ordenar_lista(lista)
         elif opcao == '7':
+            listar_arquivo()
+        elif opcao == '8':
             print("Saindo do programa.")
             break
         else:
